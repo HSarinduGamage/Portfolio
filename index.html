@@ -507,11 +507,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--surfac
     </nav>
 
     <div class="nav-actions">
-      <!-- EDIT: CV path -->
-      <a href="cv/my-cv.pdf" class="btn btn-primary" download style="padding:.62rem 1.1rem;font-size:.86rem">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        Download CV
-      </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
@@ -896,15 +891,22 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--surfac
       <article class="fcard reveal">
         <div class="ftop"><h4>ETL Pipeline Development & Data Engineering Automation</h4><div class="fmeta"><b>Arimac · IFS</b>2022 — 2026</div></div>
         <p>Developed Python-based ETL pipelines with validation and transformation processes to structure analytics-ready datasets — reducing manual effort, improving accuracy, and enabling scalable, efficient analytics workflows.</p>
-        <div class="fhighlight"><span class="fh-ic">🏆</span><div class="fh-txt"><span class="fh-label">Key impact</span>Migrated the <b>Visa Payment Panel (USA client)</b> to the cloud and automated <b>50+ ESG KPIs</b> in Azure Data Lake.</div></div>
+        <div class="fhighlight"><span class="fh-ic">🏆</span><div class="fh-txt"><span class="fh-label">Key impact</span>Automated <b>50+ ESG KPIs</b> in Azure Data Lake with validated, analytics-ready data pipelines.</div></div>
         <div class="ftech"><span>Python</span><span>ETL</span><span>Azure Data Lake</span><span>Automation</span></div>
       </article>
 
       <article class="fcard reveal">
-        <div class="ftop"><h4>Visa Payment Panel — Credit Card Transaction Analytics</h4><div class="fmeta"><b>Arimac</b>2022 — 2023</div></div>
+        <div class="ftop"><h4>Credit for Life — Credit Card Transaction Analytics</h4><div class="fmeta"><b>Arimac</b>2022 — 2023</div></div>
         <p>Analysed large-scale transaction datasets in SPSS and built structured reports, while training stakeholders on interpreting outputs — improving reporting accuracy and usability and reducing turnaround time.</p>
-        <div class="fhighlight"><span class="fh-ic">🏆</span><div class="fh-txt"><span class="fh-label">Key impact</span>Delivered <b>custom SPSS analytics for the Visa Payment Panel (USA client)</b>, tailored to their defined requirements.</div></div>
+        <div class="fhighlight"><span class="fh-ic">🏆</span><div class="fh-txt"><span class="fh-label">Key impact</span>Delivered <b>custom SPSS analytics for Credit for Life (USA client)</b>, tailored to their defined requirements.</div></div>
         <div class="ftech"><span>IBM SPSS</span><span>Financial Analysis</span><span>Statistics</span><span>Excel</span></div>
+      </article>
+
+      <article class="fcard reveal">
+        <div class="ftop"><h4>Visa Payment Panel — Cloud Migration</h4><div class="fmeta"><b>MiHCM Solutions</b>2022 — 2023</div></div>
+        <p>Re-platformed the Visa Payment Panel analytics solution for a USA client to the cloud — modernising data flows and reporting for better scalability, reliability, and reduced maintenance overhead.</p>
+        <div class="fhighlight"><span class="fh-ic">🏆</span><div class="fh-txt"><span class="fh-label">Key impact</span>Successfully migrated the <b>Visa Payment Panel (USA client)</b> to a cloud-based platform.</div></div>
+        <div class="ftech"><span>Cloud Migration</span><span>Azure</span><span>Power BI</span><span>Data Engineering</span></div>
       </article>
     </div>
   </div>
@@ -1209,7 +1211,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--surfac
       <h2 class="sec-title">Let's <em>work together</em></h2>
     </div>
 
-    <div class="contact-grid">
+    <div class="contact-grid" style="grid-template-columns:1fr;max-width:640px">
       <div class="contact-info reveal">
         <h3>Reach out</h3>
         <!-- EDIT: contact intro -->
@@ -1243,26 +1245,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--surfac
         </div>
       </div>
 
-      <!-- Contact form (no <form> dependence on backend; handled in JS) -->
-      <form class="contact-form reveal" id="contactForm" novalidate>
-        <div class="field">
-          <label for="cName">YOUR NAME</label>
-          <input type="text" id="cName" placeholder="Jane Doe" required />
-        </div>
-        <div class="field">
-          <label for="cEmail">EMAIL ADDRESS</label>
-          <input type="email" id="cEmail" placeholder="jane@company.com" required />
-        </div>
-        <div class="field">
-          <label for="cMsg">MESSAGE</label>
-          <textarea id="cMsg" placeholder="Tell me about the role or project…" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
-          Send Message
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-        </button>
-        <div class="form-msg" id="formMsg"></div>
-      </form>
     </div>
   </div>
 </section>
@@ -1390,24 +1372,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;background:var(--surfac
     }
     requestAnimationFrame(step);
   }
-
-  /* ---------- CONTACT FORM (client-side validation) ---------- */
-  // NOTE: This is a front-end demo. To actually receive messages,
-  // connect to a service like Formspree / EmailJS, or your own backend.
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMsg');
-  form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    const name = document.getElementById('cName').value.trim();
-    const email = document.getElementById('cEmail').value.trim();
-    const text = document.getElementById('cMsg').value.trim();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!name || !email || !text){ msg.textContent = 'Please fill in all fields.'; msg.className = 'form-msg err'; return; }
-    if(!emailOk){ msg.textContent = 'Please enter a valid email address.'; msg.className = 'form-msg err'; return; }
-    msg.textContent = 'Thanks, ' + name + '! Your message is ready — connect a form service to send it.';
-    msg.className = 'form-msg ok';
-    form.reset();
-  });
 
   /* ---------- PROJECT CATEGORY FILTER ---------- */
   const filters = document.getElementById('projFilters');
